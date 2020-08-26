@@ -1,21 +1,28 @@
+/**
+ * Hands-On Systems Programming in Rust 
+ * https://learning.oreilly.com/videos/hands-on-systems-programming/
+ */
+
 use clap::{App, Arg};
-use std::fs::File;
 use std::env;
-use std::io::{self, ErrorKind, BufReader, BufWriter, Result, Read, Write};
+use std::fs::File;
+use std::io::{self, BufReader, BufWriter, ErrorKind, Read, Result, Write};
+
 
 const CHUNK_SIZE: usize = 16 * 1024;
+
 
 fn main() -> Result<()> {
     let matches = App::new("pipeviewer")
         .arg(Arg::with_name("infile").help("Read from a file instead of stdin"))
-        .arg(Arg::with_name("outfile")
-            .short("o")
-            .long("outfile")
-            .takes_value(true)
-            .help("wrtie output to a file instead of stdout."))
-        .arg(Arg::with_name("silent")
-            .short("s")
-            .long("silent"))
+        .arg(
+            Arg::with_name("outfile")
+                .short("o")
+                .long("outfile")
+                .takes_value(true)
+                .help("wrtie output to a file instead of stdout."),
+        )
+        .arg(Arg::with_name("silent").short("s").long("silent"))
         .get_matches();
 
     let infile = matches.value_of("infile").unwrap_or_default();
@@ -26,16 +33,17 @@ fn main() -> Result<()> {
         !env::var("PV_SILENT").unwrap_or_default().is_empty()
     };
     // dbg!(infile, outfile, silent);
+
     let mut reader: Box<dyn Read> = if !infile.is_empty() {
-      Box::new(BufReader::new(File::open(infile)?))
+        Box::new(BufReader::new(File::open(infile)?))
     } else {
-      Box::new(BufReader::new(io::stdin()))
+        Box::new(BufReader::new(io::stdin()))
     };
 
     let mut writer: Box<dyn Write> = if !outfile.is_empty() {
-      Box::new(BufWriter::new(File::create(outfile)?))
+        Box::new(BufWriter::new(File::create(outfile)?))
     } else {
-      Box::new(BufWriter::new(io::stdout()))
+        Box::new(BufWriter::new(io::stdout()))
     };
 
     let mut total_bytes = 0;
