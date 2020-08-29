@@ -1,3 +1,5 @@
+//! Pipeviewer library documentation
+
 /**
  * Hands-On Systems Programming in Rust
  * https://learning.oreilly.com/videos/hands-on-systems-programming/
