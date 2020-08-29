@@ -1,3 +1,7 @@
+/**
+ * Hands-On Systems Programming in Rust
+ * https://learning.oreilly.com/videos/hands-on-systems-programming/
+ */
 pub mod args;
 pub mod read;
 pub mod stats;

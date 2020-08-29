@@ -1,3 +1,7 @@
+/**
+ * Hands-On Systems Programming in Rust
+ * https://learning.oreilly.com/videos/hands-on-systems-programming/
+ */
 use crossbeam::channel::Receiver;
 use std::fs::File;
 use std::io::{self, BufWriter, ErrorKind, Result, Write};

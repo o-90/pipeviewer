@@ -1,13 +1,9 @@
-### Usage
+Trying to learn Rust :)
+Implementation of project described in [Hands On Systems Programming in Rust](https://learning.oreilly.com/videos/hands-on-systems-programming/).
 
-```bash
-$ # genenrate a random file
-$ dd if=/dev/urandom bs=1024 count=128 of=myfile
-$ # build project
-$ cargo build
-$ # execute against random file
-$ cat myfile| target/debug/pipeviewer > myfile2
-131072
-$ # check files are the same
-$ diff myfile myfile2
+### Usage
+```shell
+$ # test program
+$ yes | cargo run -- -o /dev/null
+1617925120 0:00:09 [38626296b/s]
 ```
