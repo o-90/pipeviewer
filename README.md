@@ -1,6 +1,6 @@
 Trying to learn Rust :)
 
-Implementation of project described in [Hands On Systems Programming in Rust](https://learning.oreilly.com/videos/hands-on-systems-programming/).
+Implementation of project described in [Hands On Systems Programming in Rust](https://learning.oreilly.com/videos/hands-on-systems-programming/9781838822132/).
 
 ### Usage
 ```shell
