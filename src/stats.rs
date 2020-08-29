@@ -1,12 +1,15 @@
+/**
+ * Hands-On Systems Programming in Rust
+ * https://learning.oreilly.com/videos/hands-on-systems-programming/
+ */
 use crossbeam::channel::Receiver;
 use crossterm::{
     cursor, execute,
     style::{self, Color, PrintStyledContent},
-    terminal::{Clear, ClearType}
+    terminal::{Clear, ClearType},
 };
 use std::io::{self, Result, Stderr, Write};
 use std::time::{Duration, Instant};
-
 
 pub fn stats_loop(silent: bool, stats_rx: Receiver<usize>) -> Result<()> {
     let mut total_bytes = 0;

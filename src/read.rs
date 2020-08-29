@@ -1,3 +1,7 @@
+/**
+ * Hands-On Systems Programming in Rust
+ * https://learning.oreilly.com/videos/hands-on-systems-programming/
+ */
 use crate::CHUNK_SIZE;
 use crossbeam::channel::Sender;
 use std::fs::File;
